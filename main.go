@@ -12,10 +12,7 @@ import (
 )
 
 func main() {
-	app := cli.NewApp()
-	app.HideVersion = true
-	app.Flags = cmd.Flags
-	app.Flags = append(app.Flags,
+	cmd.Flags = append(cmd.Flags,
 		cli.StringFlag{
 			Name:   "google_api_key",
 			EnvVar: "GOOGLE_API_KEY",
@@ -32,13 +29,14 @@ func main() {
 			Usage:  "Google signature",
 		},
 	)
-	app.Before = cmd.Setup
-	app.Action = func(c *cli.Context) {
+
+	cmd.Actions = append(cmd.Actions, func(c *cli.Context) {
 		google.Key = c.String("google_api_key")
 		google.ClientID = c.String("google_client_id")
 		google.Signature = c.String("google_signature")
-	}
-	app.RunAndExitOnError()
+	})
+
+	cmd.Init()
 
 	server.Init(
 		server.Name("go.micro.srv.geocode"),
