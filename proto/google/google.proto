@@ -53,10 +53,9 @@ message GeocodeResponse {
 message ReverseRequest {
 	Point latlng = 1;
 	string place_id = 2;
-	string placeID = 3;
-	string language = 4;
-	repeated string result_type = 5;
-	repeated string location_type = 6;
+	string language = 3;
+	repeated string result_type = 4;
+	repeated string location_type = 5;
 }
 
 message ReverseResponse {
