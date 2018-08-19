@@ -6,9 +6,9 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/micro/geocode-srv/google"
-	proto "github.com/micro/geocode-srv/proto/google"
 	"github.com/micro/go-micro/errors"
+	"github.com/microhq/geocode-srv/google"
+	proto "github.com/microhq/geocode-srv/proto/google"
 
 	"golang.org/x/net/context"
 )
@@ -60,8 +60,8 @@ func (g *Google) ReverseGeocode(ctx context.Context, req *proto.ReverseRequest, 
 	if len(req.PlaceId) > 0 {
 		u.Set("place_id", req.PlaceId)
 	}
-	if len(req.PlaceID) > 0 {
-		u.Set("placeID", req.PlaceID)
+	if len(req.PlaceId) > 0 {
+		u.Set("placeID", req.PlaceId)
 	}
 	if len(req.Language) > 0 {
 		u.Set("language", req.Language)

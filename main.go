@@ -6,9 +6,9 @@ import (
 	"github.com/micro/cli"
 	micro "github.com/micro/go-micro"
 
-	"github.com/micro/geocode-srv/google"
-	"github.com/micro/geocode-srv/handler"
-	proto "github.com/micro/geocode-srv/proto/google"
+	"github.com/microhq/geocode-srv/google"
+	"github.com/microhq/geocode-srv/handler"
+	proto "github.com/microhq/geocode-srv/proto/google"
 )
 
 func main() {

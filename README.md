@@ -19,7 +19,7 @@ Geocode server implements the Google Maps Geocoding API as a go-micro RPC servic
 4. Download and start the service
 
 	```shell
-	go get github.com/micro/geocode-srv
+	go get github.com/microhq/geocode-srv
 	geocode-srv --google_api_key=YOUR_API_TOKEN
 	```
 
